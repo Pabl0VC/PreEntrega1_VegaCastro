@@ -3,6 +3,14 @@
 //CUPON DE DESCUENTO 30%: promo
 //CUPON DE DESCUENTO 50%: coderhouse
 
+//Funciones
+function agregarCarrito(){
+    alert(`${productos.toUpperCase()} agregado al carrito.`)
+}
+
+function cuponDescuento(total, descuento){
+    totalFinal = total*descuento
+}
 
 total = 0
 //Solicitud nombre cliente
@@ -24,19 +32,19 @@ let cantidad = parseInt(prompt("¿Cuantos productos necesita?"))
             productos = prompt (`No existe el producto "${productos}". Por favor ingrese el NOMBRE DEL PRODUCTO CORRECTAMENTE`).toLowerCase() //Validacion Producto
         }
         if (productos == "gafas"){
-            alert(`${productos.toUpperCase()} agregado al carrito.`)
+            agregarCarrito(productos)
             total = total + 20
         }
         else if (productos == "gorra" ){
-            alert(`${productos.toUpperCase()} agregado al carrito.`)
+            agregarCarrito(productos)
             total = total + 10
         }
         else if(productos == "zapatillas"){
-            alert(`${productos.toUpperCase()} agregado al carrito.`)
+            agregarCarrito(productos)
             total = total + 45
         }
         else if (productos == "pulsera"){
-            alert(`${productos.toUpperCase()} agregado al carrito.`)
+            agregarCarrito(productos)
             total = total + 8
         }
     }
@@ -57,11 +65,11 @@ let respuesta = prompt("¿Usted tiene un CUPON DE DESCUENTO? Escriba SI o NO").t
             cupon = prompt("Codigo inválido. Ingrese el CODIGO DEL CUPON").toLowerCase()
         }
         if( cupon == "promo"){
-            let totalFinal = total * 0.7
+            cuponDescuento(total, 0.7)
             alert(`A obtenido un 30% de descuento. Su total a pagar es $${totalFinal.toFixed(3)} CLP`)
         }
         else if(cupon == "coderhouse"){
-            let totalFinal = total * 0.5
+            cuponDescuento(total, 0.5)
             alert(`A obtenido un 50% de descuento. Su total a pagar es $${totalFinal.toFixed(3)} CLP`)
         }
         else { //Precio final con descuento
@@ -70,7 +78,3 @@ let respuesta = prompt("¿Usted tiene un CUPON DE DESCUENTO? Escriba SI o NO").t
         }
 
     alert ('Gracias por su compra, vuelva pronto')
-
-
-
-
